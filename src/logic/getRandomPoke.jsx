@@ -5,7 +5,7 @@ function getRandomInt(max) {
 }
 
 export const getRandomPoke = async () => {
-    const res = await fetch(ENDPOINT + getRandomInt(900))
+    const res = await fetch(ENDPOINT + getRandomInt(493))
     const data = await res.json()
     let name = data.name
     name = name.charAt(0).toUpperCase() + name.slice(1)

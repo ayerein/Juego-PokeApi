@@ -1,3 +1,5 @@
+import { resetGameStorage } from "../logic/storage"
+import { Link } from "react-router-dom"
 
 export const FigthButtons = ({ getFigth, comments }) => {
     return(
@@ -11,7 +13,7 @@ export const FigthButtons = ({ getFigth, comments }) => {
             </div>
             <div className="figth-buttons">
                 <button onClick={getFigth}>Atacar</button>
-                <button>Huir</button>
+                <Link to='/' onClick={resetGameStorage}>Huir</Link>
             </div>
         </section>
     )

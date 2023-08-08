@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { getRandomPoke } from "../logic/getRandomPoke"
-import { CardPoke } from "../components/cardPoke"
 import { Pokeball } from "../components/Pokeball"
+import { CardPoke } from "../components/CardPoke"
 
 export const NewPoke = () => {
     const storageTeam = window.localStorage.getItem('team')
@@ -9,11 +9,12 @@ export const NewPoke = () => {
     const [ newPoke, setNewPoke ] = useState()
     let newTeam = team ? team : []
 
-    const handleClic = async () => {
-        const getPoke = await getRandomPoke()
-        setNewPoke(getPoke)
-        newTeam.push(getPoke)
-        window.localStorage.setItem('team', JSON.stringify(newTeam))
+    const handleClic = async (event) => {
+      event.currentTarget.disabled = true;
+      const getPoke = await getRandomPoke()
+      setNewPoke(getPoke)
+      newTeam.push(getPoke)
+      window.localStorage.setItem('team', JSON.stringify(newTeam))
       }
 
     return(

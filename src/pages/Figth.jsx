@@ -1,12 +1,19 @@
 import { useState } from "react"
 import { getRandomPoke } from "../logic/getRandomPoke"
 import { FigthScreen } from "../container/FigthScreen"
+import { getTeam } from "../logic/getTeam"
+import { FigthTeam } from "../components/FigthTeam"
 
 export const Figth = () => {
-    const [ pokeSelected, setPokeSelected ] = useState()
-    const [ enemyPoke, setEnemyPoke ] = useState()
-    const storageTeam = window.localStorage.getItem('team')
-    const team =  JSON.parse(storageTeam)
+    const [ pokeSelected, setPokeSelected ] = useState(() => {
+        const pokeFromStorage = window.localStorage.getItem('poke')
+        return pokeFromStorage && JSON.parse(pokeFromStorage)
+      })
+    const [ enemyPoke, setEnemyPoke ] = useState(() => {
+        const enemyFromStorage = window.localStorage.getItem('enemy')
+        return enemyFromStorage && JSON.parse(enemyFromStorage)
+      })
+    const team = getTeam()
 
     const selectPoke = (poke) => {
         pokeSelected && document.getElementById(pokeSelected.id).classList.remove('poke-selected')
@@ -18,6 +25,7 @@ export const Figth = () => {
         const getPoke = await getRandomPoke()
         setEnemyPoke(getPoke)
     }
+    
     return(
         <>
         {
@@ -25,21 +33,12 @@ export const Figth = () => {
             <FigthScreen pokeSelected={pokeSelected} enemyPoke={enemyPoke} />
             :
             <section className="figth-container">
-            <p>Para comenzar selecciona un poke.</p>
-            <div className="figth-pokes">
-                {
-                    team.map(poke => (
-                        <div key={poke.id} id={poke.id} onClick={()=>selectPoke(poke)}>
-                            <img src={poke.img} alt={poke.name} className="home-team-img" />
-                        </div>
-                    ))
-                }
-            </div>
+                <FigthTeam team={team} selectPoke={selectPoke}/>
             {
                 pokeSelected && <button onClick={starFigth}>Continuar</button>
             }
             </section>
         }
-            </>
+        </>
     )
 }

@@ -7,11 +7,11 @@ Funcionalidades hasta el momento:
         - se combate contra poke random por turnos
         - el de mayor velocidad ataca primero.
 
+    - guardar combate en storage
+    - componente para mostrar al ganador 
+    - boton huir
+    - poder reemplazar pokemons del equipo(borrando uno de localstorage)
 
 funcionalidades a agregar
-
-- componente para mostrar al ganador 
-- boton huir
 - sistema de puntos
-- poder reemplazar pokemons del equipo
 - mejorar sintaxis Figth.jsx FigthScreen.jsx (por lo menos funciona.)

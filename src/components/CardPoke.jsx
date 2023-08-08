@@ -1,12 +1,16 @@
 import { Link, useParams } from "react-router-dom"
-/* import { team } from "../logic/getTeam" */
+import { getTeam } from "../logic/getTeam"
 
 export const CardPoke = ({ fact }) => {
+    const team = getTeam()
     const { id } = useParams()
-    const storageTeam = window.localStorage.getItem('team')
-    const team =  JSON.parse(storageTeam)
     const poke = team && team.find((poke) => poke.id == id)
     !fact && (fact = poke)
+
+    function dropPoke(){
+        const newTeam = team.filter((pk) => pk.id !== poke.id)
+        window.localStorage.setItem('team', JSON.stringify(newTeam))
+    }
     
     return(
         <>
@@ -22,10 +26,11 @@ export const CardPoke = ({ fact }) => {
                 <p className="card-poke-hp">Defense: {fact.defense}</p>
                 <p className="card-poke-hp">Speed: {fact.speed}</p>
             </div>
+            {
+                id && <Link to='/' onClick={dropPoke}> Liberar Poke </Link>
+            }
         </section>
-        <Link to="/">
-            <button>Volver</button>
-        </Link>
+        <Link to="/"> Volver </Link>
         </>
     )
 }
