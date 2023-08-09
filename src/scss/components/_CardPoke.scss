@@ -1,0 +1,32 @@
+@import './Const';
+
+.container-card-poke{
+    @include container;
+    @include center($fd:column, $jc:space-around);
+    padding: 3vh 5vw;
+    .title-new-poke{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .card-poke{
+        @include center($jc:space-around);
+        width: 100%;
+        .card-poke-container{
+            @include center($fd:column);
+            .card-poke-img{
+                height: 300px;
+            }
+            .card-poke-stats{
+                line-height: 2rem;
+            }
+        }
+    }
+    .card-buttons{
+        width: 100%;
+        @include center($jc:space-around);
+        .card-poke-button-volver, .card-drop-poke{
+            @include button($height:7vh, $width:25vw);
+            @include center;
+        }
+    }
+}

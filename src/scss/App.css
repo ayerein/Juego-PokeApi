@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #202020;
+  font-family: "Press Start 2P", cursive;
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-initial-page {
+  height: 80vh;
+  width: 80vw;
+  border: 2px solid #343434;
+  border-radius: 1rem;
+  box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 5vw;
+}
+.container-initial-page .text-initial-page {
+  text-align: center;
+  margin-bottom: 5vh;
+  line-height: 2rem;
+}
+.container-initial-page .button-first-poke {
+  border: 1px solid #343434;
+  height: 10vh;
+  width: 45vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-top: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-initial-page .button-first-poke:hover {
+  background-color: #282828;
+}
+
+.pokeball {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 150px;
+  box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+}
+.pokeball .pokeball-red {
+  height: 50%;
+  width: 100%;
+  background-color: red;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  box-shadow: inset 0px -7px 0px 0px rgb(0, 0, 0);
+}
+.pokeball .pokeball-button {
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  border: 5px solid black;
+  background-color: white;
+  position: absolute;
+  bottom: 44vh;
+  left: 47vw;
+}
+.pokeball .pokeball-button:hover {
+  border: 6px solid black;
+  cursor: pointer;
+}
+.pokeball .pokeball-white {
+  height: 50%;
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  box-shadow: inset 0px 7px 0px 0px rgb(0, 0, 0);
+}
+
+.container-card-poke {
+  height: 80vh;
+  width: 80vw;
+  border: 2px solid #343434;
+  border-radius: 1rem;
+  box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 3vh 5vw;
+}
+.container-card-poke .title-new-poke {
+  font-size: 1.2rem;
+  text-align: center;
+}
+.container-card-poke .card-poke {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.container-card-poke .card-poke .card-poke-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-card-poke .card-poke .card-poke-container .card-poke-img {
+  height: 300px;
+}
+.container-card-poke .card-poke .card-poke-container .card-poke-stats {
+  line-height: 2rem;
+}
+.container-card-poke .card-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.container-card-poke .card-buttons .card-poke-button-volver, .container-card-poke .card-buttons .card-drop-poke {
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 25vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-card-poke .card-buttons .card-poke-button-volver:hover, .container-card-poke .card-buttons .card-drop-poke:hover {
+  background-color: #282828;
+}
+
+.container-home {
+  height: 80vh;
+  width: 80vw;
+  border: 2px solid #343434;
+  border-radius: 1rem;
+  box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-home .home-title {
+  font-size: 1.2rem;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-home .home-container-team {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #383838;
+}
+.container-home .home-container-team .home-team-poke {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5vw;
+  text-decoration: none;
+}
+.container-home .home-container-team .home-team-poke:hover {
+  background-color: #383838;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.container-home .home-container-team .home-team-poke .home-team-img {
+  height: 70%;
+  background-color: transparent;
+}
+.container-home .home-container-team .home-team-poke .home-team-name {
+  background-color: transparent;
+}
+.container-home .container-button-new-poke {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.container-home .container-button-new-poke .home-button-figth {
+  text-decoration: none;
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 30vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-home .container-button-new-poke .home-button-figth:hover {
+  background-color: #282828;
+}
+.container-home .container-button-new-poke .home-button-new-poke {
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 30vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-home .container-button-new-poke .home-button-new-poke:hover {
+  background-color: #282828;
+}
+.container-home .container-button-new-poke .full-team {
+  font-size: 0.8rem;
+}
+
+.container-figth-home {
+  height: 80vh;
+  width: 80vw;
+  border: 2px solid #343434;
+  border-radius: 1rem;
+  box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0;
+}
+.container-figth-home .figth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90%;
+}
+.container-figth-home .figth-container .figth-team-title {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-figth-home .figth-container .figth-team-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+}
+.container-figth-home .figth-container .figth-team-container .figth-team-pokes {
+  height: 60%;
+  border-radius: 1rem;
+  margin: 0 1vw;
+}
+.container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
+  height: 200px;
+  background-color: transparent;
+}
+.container-figth-home .figth-container .figth-team-container .figth-team-pokes:hover {
+  background-color: #343434;
+  cursor: pointer;
+}
+.container-figth-home .figth-container .figth-team-container .poke-selected {
+  background-color: #343434;
+}
+.container-figth-home .figth-container .figth-team-button-container {
+  height: 20%;
+}
+.container-figth-home .figth-container .figth-team-button-container .figth-team-button {
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 35vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.container-figth-home .figth-container .figth-team-button-container .figth-team-button:hover {
+  background-color: #282828;
+}
+.container-figth-home .figth-container .figth-team-button-container .figth-team-button:hover {
+  cursor: pointer;
+}
+.container-figth-home .container-figth-screen {
+  height: 90%;
+  width: 100%;
+}
+.container-figth-home .container-figth-screen .figth-card, .container-figth-home .container-figth-screen .figth-card-selected {
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+.container-figth-home .container-figth-screen .figth-card .container-figth-card .figth-card-name, .container-figth-home .container-figth-screen .figth-card-selected .container-figth-card .figth-card-name {
+  margin-bottom: 1vh;
+}
+.container-figth-home .container-figth-screen .figth-card .container-figth-card .figth-card-hp, .container-figth-home .container-figth-screen .figth-card-selected .container-figth-card .figth-card-hp {
+  margin-top: 2vh;
+}
+.container-figth-home .container-figth-screen .figth-card .figth-card-img, .container-figth-home .container-figth-screen .figth-card-selected .figth-card-img {
+  height: 80%;
+}
+.container-figth-home .container-figth-screen .figth-card {
+  margin-left: 15vw;
+}
+.container-figth-home .container-figth-screen .figth-card-selected {
+  flex-direction: row-reverse;
+  margin-right: 15vw;
+}
+.container-figth-home .container-figth-screen .container-figth-control {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-top: 1px solid #343434;
+  padding: 0 4vw;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-comments {
+  width: 45%;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-comments p {
+  font-size: 0.7rem;
+  margin-top: 2vh;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons {
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 13vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 0.8rem;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons:hover {
+  background-color: #282828;
+}
+.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons:hover {
+  cursor: pointer;
+}
+.container-figth-home .winner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.container-figth-home .winner-container .winner-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 15%;
+}
+.container-figth-home .winner-container .winner-img {
+  height: 50%;
+  margin-bottom: 3vh;
+}
+.container-figth-home .winner-container .winner-button-back {
+  border: 1px solid #343434;
+  height: 7vh;
+  width: 35vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container-figth-home .winner-container .winner-button-back:hover {
+  background-color: #282828;
+}/*# sourceMappingURL=App.css.map */

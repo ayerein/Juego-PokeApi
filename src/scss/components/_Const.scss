@@ -1,0 +1,27 @@
+
+@mixin container{
+    height: 80vh;
+    width: 80vw;
+    border: 2px solid #343434;
+    border-radius: 1rem;
+    box-shadow: 12px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+@mixin center($jc:center, $ai:center, $fd:row){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin button($height, $width){
+    border: 1px solid #343434;
+    height: $height;
+    width: $width;
+    text-decoration: none;
+    border-radius: 3rem;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    &:hover{
+        background-color: #282828;
+    }
+}

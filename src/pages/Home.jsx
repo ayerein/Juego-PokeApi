@@ -6,18 +6,20 @@ import { getTeam } from "../logic/getTeam"
 export const Home = () => {
     const team = getTeam()
     return(    
-        team.length > 0 ?
+        team && team.length>0 ?
         <div className="container-home">
-            <section className="container-play-game">
-                <Link to={`/figth`}>Combate</Link>
+            <p className="home-title">Este es tu equipo!</p>
+            <TeamHome team={ team } />
+
+            <section className="container-button-new-poke">
+                <Link to={`/figth`} className="home-button-figth">Combate</Link>
+            {
+               team.length === 3 ?
+               <p className="full-team">Tu equipo esta lleno!</p>
+               :
+               <Link to="/newpoke" className="home-button-new-poke"> Nuevo pokemón </Link>
+            }
             </section>
-           <TeamHome team={ team } />
-           {
-            team.length === 3 ?
-                <p className="full-team">Tu equipo esta lleno!</p>
-            :
-                <Link to="/newpoke"> Nuevo pokemón </Link>
-           }
         </div>
         :
         <InitialPage />

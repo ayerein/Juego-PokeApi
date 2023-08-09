@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import './App.css'
 import { Home } from './pages/Home'
 import { CardPoke } from './components/cardPoke';
 import { Figth } from './pages/Figth';
 import { NewPoke } from './pages/NewPoke';
 
 function App() {
-  
   return(
     <BrowserRouter>
       <main>
@@ -19,7 +17,6 @@ function App() {
       </main>
     </BrowserRouter>
   )
-  
 }
 
 export default App

@@ -1,0 +1,53 @@
+@import './Const';
+
+.container-home{
+    @include container;
+    @include center($fd:column);
+    .home-title{
+        font-size: 1.2rem;
+        height: 15%;
+        @include center;
+    }
+    .home-container-team{
+        width: 100%;
+        height: 60%;
+        @include center;
+        border-bottom: 1px solid #383838;
+        .home-team-poke{
+            height: 70%;
+            width: 100%;
+            @include center($jc:space-around, $fd:column);
+            margin: 0 5vw;
+            text-decoration: none;
+            &:hover{
+                background-color: #383838;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .home-team-img{
+                height: 70%;
+                background-color: transparent;
+            }
+            .home-team-name{
+                background-color: transparent;
+            }
+        }
+    }
+    .container-button-new-poke{
+        width: 100%;
+        height: 25%;
+        @include center($jc:space-around);
+        .home-button-figth{
+            text-decoration: none;
+            @include button($height:7vh, $width:30vw);
+            @include center;
+        }
+        .home-button-new-poke{
+            @include button($height:7vh, $width:30vw);
+            @include center;
+        }
+        .full-team{
+            font-size: .8rem;
+        }
+    }
+}

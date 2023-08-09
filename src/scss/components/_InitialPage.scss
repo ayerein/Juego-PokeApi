@@ -1,0 +1,17 @@
+@import './Const';
+
+.container-initial-page{
+    @include container;
+    @include center($fd:column);
+    padding: 0 5vw;
+    .text-initial-page{
+        text-align: center;
+        margin-bottom: 5vh;
+        line-height: 2rem
+    }
+    .button-first-poke{
+        @include button($width:45vw, $height:10vh);
+        margin-top: 7vh;
+        @include center;
+    }
+}

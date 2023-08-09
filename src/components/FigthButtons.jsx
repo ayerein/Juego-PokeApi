@@ -11,9 +11,9 @@ export const FigthButtons = ({ getFigth, comments }) => {
                     ))
                 }
             </div>
-            <div className="figth-buttons">
-                <button onClick={getFigth}>Atacar</button>
-                <Link to='/' onClick={resetGameStorage}>Huir</Link>
+            <div className="figth-buttons-container">
+                <button onClick={getFigth} className="figth-buttons">Atacar</button>
+                <Link to='/' onClick={resetGameStorage} className="figth-buttons">Huir</Link>
             </div>
         </section>
     )

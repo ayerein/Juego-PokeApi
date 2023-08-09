@@ -27,18 +27,22 @@ export const Figth = () => {
     }
     
     return(
-        <>
+        <div className="container-figth-home">
         {
             enemyPoke ?
             <FigthScreen pokeSelected={pokeSelected} enemyPoke={enemyPoke} />
             :
             <section className="figth-container">
+                <p className="figth-team-title">Para comenzar selecciona un poke.</p>
                 <FigthTeam team={team} selectPoke={selectPoke}/>
-            {
-                pokeSelected && <button onClick={starFigth}>Continuar</button>
-            }
+                <div className="figth-team-button-container">
+                    {
+                        pokeSelected &&
+                        <button onClick={starFigth} className="figth-team-button">Continuar</button>
+                    }
+                </div>
             </section>
         }
-        </>
+        </div>
     )
 }

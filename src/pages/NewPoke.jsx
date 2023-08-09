@@ -20,7 +20,6 @@ export const NewPoke = () => {
     return(
             newPoke ?
             <>
-            <h2>Felicidades {newPoke.name} es tu nuevo compañero!</h2>
             <CardPoke fact={newPoke} />
             </>
             :

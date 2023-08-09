@@ -14,4 +14,3 @@ Funcionalidades hasta el momento:
 
 funcionalidades a agregar
 - sistema de puntos
-- mejorar sintaxis Figth.jsx FigthScreen.jsx (por lo menos funciona.)

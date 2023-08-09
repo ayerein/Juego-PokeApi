@@ -13,24 +13,29 @@ export const CardPoke = ({ fact }) => {
     }
     
     return(
-        <>
-        <section className="card-poke">
-            <div className="card-poke-container">
-                <p className="card-poke-name">{fact.name}</p>
-                <img src={fact.img} alt={fact.name} className="card-poke-img" />
-                <p className="card-poke-id">{fact.id}</p>
-            </div>
-            <div className="card-poke-container">
-                <p className="card-poke-hp">Hp: {fact.hp}</p>
-                <p className="card-poke-hp">Attack: {fact.attack}</p>
-                <p className="card-poke-hp">Defense: {fact.defense}</p>
-                <p className="card-poke-hp">Speed: {fact.speed}</p>
-            </div>
+        <div className="container-card-poke">
             {
-                id && <Link to='/' onClick={dropPoke}> Liberar Poke </Link>
+                !id && <p className="title-new-poke">Felicidades {fact.name} es tu nuevo compañero!</p>
             }
-        </section>
-        <Link to="/"> Volver </Link>
-        </>
+            <p className="card-poke-name">{fact.name}</p>
+            <section className="card-poke">
+                <div className="card-poke-container">
+                    <img src={fact.img} alt={fact.name} className="card-poke-img" />
+                    <p className="card-poke-id">{fact.id}</p>
+                </div>
+                <div className="card-poke-container">
+                    <p className="card-poke-stats">Hp: {fact.hp}</p>
+                    <p className="card-poke-stats">Attack: {fact.attack}</p>
+                    <p className="card-poke-stats">Defense: {fact.defense}</p>
+                    <p className="card-poke-stats">Speed: {fact.speed}</p>
+                </div>
+            </section>
+            <section className="card-buttons">
+                {
+                    id && <Link to='/' onClick={dropPoke} className="card-drop-poke"> Liberar Poke </Link>
+                }
+                <Link to="/" className="card-poke-button-volver"> Volver </Link>
+            </section>
+        </div>
     )
 }

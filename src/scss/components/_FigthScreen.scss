@@ -1,0 +1,112 @@
+@import './Const';
+
+.container-figth-home{
+    @include container;
+    @include center;
+    padding: 0;
+    .figth-container{
+        @include center($fd:column);
+        height: 90%;
+        .figth-team-title{
+            height: 20%;
+            @include center;
+        }
+        .figth-team-container{
+            @include center();
+            height: 100%;
+            .figth-team-pokes{
+                height: 60%;
+                border-radius: 1rem;
+                margin: 0 1vw;
+                .figth-team-img{
+                    height: 200px;
+                    background-color: transparent;
+                }
+                &:hover{
+                    background-color: #343434;
+                    cursor: pointer;
+                }
+            }
+            .poke-selected{
+                background-color: #343434;
+            }
+        }
+        .figth-team-button-container{
+            height: 20%;
+            .figth-team-button{
+                @include button($height:7vh, $width:35vw);
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .container-figth-screen{
+        height: 90%;
+        width: 100%;
+        .figth-card, .figth-card-selected{
+            height: 40%;
+            @include center($jc:space-around);
+            .container-figth-card{
+                .figth-card-name{
+                    margin-bottom: 1vh;
+                }
+                .figth-card-hp{
+                    margin-top: 2vh;
+                }
+            }
+            .figth-card-img{
+                height: 80%;
+            }
+        }
+        .figth-card{
+            margin-left: 15vw;
+        }
+        .figth-card-selected{
+            flex-direction: row-reverse;
+            margin-right: 15vw;
+        }
+        .container-figth-control{
+            height: 20%;
+            @include center($jc:space-between);
+            border-top: 1px solid #343434;
+            padding: 0 4vw;
+            .figth-comments{
+                width: 45%;
+                p{
+                    font-size: .7rem;
+                    margin-top: 2vh;
+                }
+            }
+            .figth-buttons-container{
+                width: 45%;
+                @include center($jc:space-between);
+                .figth-buttons{
+                    @include button($height:7vh, $width:13vw);
+                    @include center;
+                    font-size: .8rem;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .winner-container{
+        @include center($fd:column);
+        height: 100%;
+        .winner-title{
+            @include center;
+            height: 15%;
+        }
+        .winner-img{
+            height: 50%;
+            margin-bottom: 3vh;
+        }
+        .winner-button-back{
+            @include button($height:7vh, $width:35vw);
+            @include center;
+        }
+    }
+    
+}
