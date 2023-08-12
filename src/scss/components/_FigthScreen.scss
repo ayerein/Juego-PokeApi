@@ -110,3 +110,79 @@
     }
     
 }
+
+@media (max-width:768px){
+    main{
+        .container-figth-home{
+            height: 90vh;
+            width: 90vw;
+            .figth-container{
+                .figth-team-title{
+                    width: 100%;
+                    text-align: center;
+                }
+                .figth-team-container{
+                    flex-direction: column;
+                    .figth-team-pokes{
+                        @include center;
+                        margin-bottom: 2vh;
+                        .figth-team-img{
+                            height: 150px;
+                        }
+                    }
+                }
+                .figth-team-button-container{
+                    @include center;
+                    .figth-team-button{
+                        width: 55vw;
+                    }
+                }
+            }
+            .container-figth-screen{
+                .figth-card, .figth-card-selected{
+                    margin: 0 5vw;
+                    height: 35%;
+                    .figth-card-img{
+                        height: 170px;
+                    }
+                    .container-figth-card{
+                        .figth-card-hp{
+                            font-size: .7rem;
+                        }
+                    }
+                }
+                .container-figth-control{
+                    flex-direction: column-reverse;
+                    margin-top: 3vh;
+                    height: 30%;
+                    justify-content: space-evenly;
+                    .figth-comments{
+                        width: 100%;
+                        line-height: 1rem;
+                        p{
+                            font-size: .9rem;
+                        }
+                    }
+                    .figth-buttons-container{
+                        width: 100%;
+                        .figth-buttons{
+                            width: 45%;
+                        }
+                    }
+                }
+                .winner-container{
+                    justify-content: space-around;
+                    .winner-title{
+                        text-align: center;
+                        line-height: 2rem;
+                        font-size: 1.3rem;
+                    }
+                    .winner-button-back{
+                        width: 80vw;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

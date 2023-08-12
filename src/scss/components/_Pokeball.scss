@@ -35,3 +35,12 @@
         box-shadow: inset 0px 7px 0px 0px rgba(0,0,0,1);
       }
   }
+
+  @media (max-width:768px){
+    .pokeball{
+      .pokeball-button{
+        left: 42%;
+        top: 47%
+      }
+    }
+  }

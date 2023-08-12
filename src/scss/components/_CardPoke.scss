@@ -14,7 +14,10 @@
         .card-poke-container{
             @include center($fd:column);
             .card-poke-img{
-                height: 300px;
+                height: 250px;
+                border-radius: 1rem;
+                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                margin-bottom: 3vh;
             }
             .card-poke-stats{
                 line-height: 2rem;
@@ -27,6 +30,32 @@
         .card-poke-button-volver, .card-drop-poke{
             @include button($height:7vh, $width:25vw);
             @include center;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .container-card-poke{
+        
+        @include container-responsive;
+        .title-new-poke{
+            line-height: 2rem;
+        }
+        .card-poke{
+            flex-direction: column;
+            .card-poke-container-stats{
+                margin-top: 3vh;
+            }
+        }
+        .card-buttons{
+            flex-direction: column;
+            .card-drop-poke{
+                width: 85%;
+                margin-bottom: 3vh;
+            }
+            .card-poke-button-volver{
+                width: 85%;
+            }
         }
     }
 }

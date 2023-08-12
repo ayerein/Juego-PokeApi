@@ -15,3 +15,14 @@
         @include center;
     }
 }
+
+@media (max-width:768px){
+    .container-initial-page{
+        @include container-responsive;
+        .button-first-poke{
+            @include button($height:15vh, $width:65vw);
+            text-align: center;
+            border-radius: 1rem;
+        }
+    }
+}

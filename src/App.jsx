@@ -4,6 +4,7 @@ import { CardPoke } from './components/cardPoke';
 import { Figth } from './pages/Figth';
 import { NewPoke } from './pages/NewPoke';
 
+
 function App() {
   return(
     <BrowserRouter>

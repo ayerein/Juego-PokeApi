@@ -11,6 +11,9 @@ Funcionalidades hasta el momento:
     - componente para mostrar al ganador 
     - boton huir
     - poder reemplazar pokemons del equipo(borrando uno de localstorage)
+    - estilos basicos
 
 funcionalidades a agregar
 - sistema de puntos
+
+

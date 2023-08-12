@@ -50,6 +50,25 @@ main {
   background-color: #282828;
 }
 
+@media (max-width: 768px) {
+  .container-initial-page {
+    height: 90vh;
+    width: 85vw;
+  }
+  .container-initial-page .button-first-poke {
+    border: 1px solid #343434;
+    height: 15vh;
+    width: 65vw;
+    text-decoration: none;
+    border-radius: 3rem;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    border-radius: 1rem;
+  }
+  .container-initial-page .button-first-poke:hover {
+    background-color: #282828;
+  }
+}
 .pokeball {
   height: 300px;
   width: 300px;
@@ -88,6 +107,12 @@ main {
   box-shadow: inset 0px 7px 0px 0px rgb(0, 0, 0);
 }
 
+@media (max-width: 768px) {
+  .pokeball .pokeball-button {
+    left: 42%;
+    top: 47%;
+  }
+}
 .container-card-poke {
   height: 80vh;
   width: 80vw;
@@ -118,7 +143,10 @@ main {
   flex-direction: column;
 }
 .container-card-poke .card-poke .card-poke-container .card-poke-img {
-  height: 300px;
+  height: 250px;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 3vh;
 }
 .container-card-poke .card-poke .card-poke-container .card-poke-stats {
   line-height: 2rem;
@@ -146,6 +174,31 @@ main {
   background-color: #282828;
 }
 
+@media (max-width: 768px) {
+  .container-card-poke {
+    height: 90vh;
+    width: 85vw;
+  }
+  .container-card-poke .title-new-poke {
+    line-height: 2rem;
+  }
+  .container-card-poke .card-poke {
+    flex-direction: column;
+  }
+  .container-card-poke .card-poke .card-poke-container-stats {
+    margin-top: 3vh;
+  }
+  .container-card-poke .card-buttons {
+    flex-direction: column;
+  }
+  .container-card-poke .card-buttons .card-drop-poke {
+    width: 85%;
+    margin-bottom: 3vh;
+  }
+  .container-card-poke .card-buttons .card-poke-button-volver {
+    width: 85%;
+  }
+}
 .container-home {
   height: 80vh;
   width: 80vw;
@@ -160,6 +213,7 @@ main {
 .container-home .home-title {
   font-size: 1.2rem;
   height: 15%;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,15 +222,13 @@ main {
 .container-home .home-container-team {
   width: 100%;
   height: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
   border-bottom: 1px solid #383838;
+  display: flex;
+  align-items: center;
 }
 .container-home .home-container-team .home-team-poke {
-  height: 70%;
-  width: 100%;
+  height: 70%; /* 
+width: 100%; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -190,7 +242,8 @@ main {
   cursor: pointer;
 }
 .container-home .home-container-team .home-team-poke .home-team-img {
-  height: 70%;
+  width: 80%;
+  max-width: 180px;
   background-color: transparent;
 }
 .container-home .home-container-team .home-team-poke .home-team-name {
@@ -202,7 +255,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column-reverse;
 }
 .container-home .container-button-new-poke .home-button-figth {
   text-decoration: none;
@@ -239,6 +292,55 @@ main {
   font-size: 0.8rem;
 }
 
+@media (max-width: 768px) {
+  /* .container-home{
+      @include container-responsive;
+      overflow: hidden;
+      .home-title{
+          width: 90%;
+          text-align: center;
+          line-height: 3rem;
+          height: 25%;
+      }
+      .home-container-team{
+          height: 50%;
+      }
+      .container-button-new-poke{
+          flex-direction: column-reverse;
+          .home-button-figth, .home-button-new-poke{
+              width: 45%;
+              height: 10vh;
+              text-align: center;
+          }
+      }
+  } */
+  main .home-container-team {
+    height: 75vh;
+    width: 85vw;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+  }
+  main .home-container-team .home-team-poke {
+    border: 1px solid #383838;
+    margin: 0 5vw;
+  }
+  main .home-container-team .home-team-poke .home-team-img {
+    width: 200px;
+  }
+  main .container-button-new-poke {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-direction: column-reverse;
+  }
+  main .container-button-new-poke .home-button-figth, main .container-button-new-poke .home-button-new-poke {
+    width: 45%;
+    height: 10vh;
+    text-align: center;
+  }
+}
 .container-figth-home {
   height: 80vh;
   width: 80vw;

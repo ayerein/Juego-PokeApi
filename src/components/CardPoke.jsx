@@ -23,7 +23,7 @@ export const CardPoke = ({ fact }) => {
                     <img src={fact.img} alt={fact.name} className="card-poke-img" />
                     <p className="card-poke-id">{fact.id}</p>
                 </div>
-                <div className="card-poke-container">
+                <div className="card-poke-container card-poke-container-stats">
                     <p className="card-poke-stats">Hp: {fact.hp}</p>
                     <p className="card-poke-stats">Attack: {fact.attack}</p>
                     <p className="card-poke-stats">Defense: {fact.defense}</p>
