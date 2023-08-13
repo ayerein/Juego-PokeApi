@@ -1,4 +1,5 @@
-Funcionalidades hasta el momento:
+## Funcionalidades hasta el momento:
+
     - seleccion de poke random
     - armar equipo con 3 pokes.
     - vista detalle de cada poke.
@@ -13,7 +14,8 @@ Funcionalidades hasta el momento:
     - poder reemplazar pokemons del equipo(borrando uno de localstorage)
     - estilos basicos
 
-funcionalidades a agregar
+## funcionalidades a agregar
+
 - sistema de puntos
 
 
