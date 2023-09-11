@@ -12,39 +12,35 @@
     .home-container-team{
         width: 100%;
         height: 60%;
-        border-bottom: 1px solid #383838;
         @include center;
         .home-team-poke{
             height: 70%;
             @include center($jc:space-around, $fd:column);
             margin: 0 5vw;
             text-decoration: none;
+            background-color: rgba($color: #343434, $alpha: .3);
+            border-radius: 1rem;
             &:hover{
-                background-color: #383838;
-                border-radius: 15px;
+                background-color: rgba($color: #343434, $alpha: .6);
+                border-radius: 1rem;
                 cursor: pointer;
             }
             .home-team-img{
                 width: 80%;
                 max-width: 180px;
-                background-color: transparent;
-            }
-            .home-team-name{
-                background-color: transparent;
             }
         }
     }
     .container-button-new-poke{
         width: 100%;
         height: 25%;
-        @include center($jc:space-around, $fd:column-reverse);
+        @include center($jc:space-evenly);
+        background-color: rgba($color: #343434, $alpha: .5);
         .home-button-figth{
             text-decoration: none;
-            @include button($height:7vh, $width:30vw);
-            @include center;
         }
-        .home-button-new-poke{
-            @include button($height:7vh, $width:30vw);
+        .home-button-new-poke, .home-button-figth{
+            @include button($height:7vh, $width:25vw);
             @include center;
         }
         .full-team{
@@ -58,33 +54,30 @@
     main{
         .container-home{
             @include container-responsive;
+            .home-title{
+                width: 80%;
+                line-height: 2rem;
+            }
             .home-container-team{
-                overflow: scroll;
-                justify-content: stretch;
                 flex-direction: column;
+                justify-content: space-evenly;
                 .home-team-poke{
                     flex-direction: row;
-                    justify-content: start;
                     margin: 0;
                     width: 80%;
+                    height: 30%;
                     .home-team-img{
-                        width: 100px;
+                        width: 130px;
                         max-width: 350px;
                     }
                 }
             }
             .container-button-new-poke{
-                @include center;
+                @include center($jc:space-evenly);
                 flex-direction: column-reverse;
                 .home-button-figth, .home-button-new-poke{
-                    width: 55%;
+                    width: 70%;
                     text-align: center;
-                }
-                .home-button-new-poke{
-                    margin-bottom: 2vh;
-                }
-                .full-team{
-                    margin-bottom: 2vh;
                 }
             }
         }

@@ -6,35 +6,46 @@
     padding: 0;
     .figth-container{
         @include center($fd:column);
-        height: 90%;
+        height: 100%;
+        width: 100%;
         .figth-team-title{
-            height: 20%;
+            height: 15%;
             @include center;
         }
         .figth-team-container{
-            @include center();
-            height: 100%;
+            width: 100%;
+            height: 60%;
+            @include center;
             .figth-team-pokes{
-                height: 60%;
+                height: 70%;
+                @include center($jc:space-around, $fd:column);
+                margin: 0 5vw;
+                text-decoration: none;
+                background-color: rgba($color: #343434, $alpha: .3);
                 border-radius: 1rem;
-                margin: 0 1vw;
-                .figth-team-img{
-                    height: 200px;
-                    background-color: transparent;
-                }
                 &:hover{
-                    background-color: #343434;
+                    background-color: rgba($color: #343434, $alpha: .6);
+                    border-radius: 1rem;
                     cursor: pointer;
+                }
+                .figth-team-img{
+                    width: 80%;
+                    max-width: 180px;
                 }
             }
             .poke-selected{
-                background-color: #343434;
+                background-color: rgba($color: #343434, $alpha: .6);
+                border-radius: 1rem;
             }
         }
         .figth-team-button-container{
-            height: 20%;
+            height: 25%;
+            width: 100%;
+            @include center($jc:space-evenly);
+            background-color: rgba($color: #343434, $alpha: .5);
             .figth-team-button{
-                @include button($height:7vh, $width:35vw);
+                @include button($height:7vh, $width:25vw);
+                @include center;
                 &:hover{
                     cursor: pointer;
                 }
@@ -42,45 +53,73 @@
         }
     }
     .container-figth-screen{
-        height: 90%;
+        height: 100%;
         width: 100%;
-        .figth-card, .figth-card-selected{
-            height: 40%;
-            @include center($jc:space-around);
-            .container-figth-card{
-                .figth-card-name{
-                    margin-bottom: 1vh;
+        .container-cards{
+            height: 80%;
+            width: 100%;
+            @include center($fd:column, $jc:space-evenly);
+            background-image: url("/background-battle.jpg");
+            background-position: center;
+            background-size: cover;
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
+            .figth-card, .figth-card-selected{
+                background-color: transparent;
+                height: 50%;
+                width: 100%;
+                @include center($jc:space-evenly);
+                .container-figth-card{
+                    height: 50%;
+                    width: 35%;
+                    background-color: rgba($color: #343434, $alpha: .5);
+                    border-radius: .5rem;
+                    @include center($fd:column);
+                    .figth-card-name{
+                        margin-bottom: 1vh;
+                        background-color: transparent;
+                    }
+                    .figth-card-progress{
+                        width: 80%;
+                        border: 1px solid black;
+                        border-radius: 1rem;
+                    }
+                    .figth-card-hp{
+                        background-color: transparent;
+                        margin-top: 2vh;
+                    }
                 }
-                .figth-card-hp{
-                    margin-top: 2vh;
+                .figth-card-img{
+                    background-color: transparent;
+                    height: 80%;
                 }
             }
-            .figth-card-img{
-                height: 80%;
+            .figth-card-selected{
+                flex-direction: row-reverse;
             }
-        }
-        .figth-card{
-            margin-left: 15vw;
-        }
-        .figth-card-selected{
-            flex-direction: row-reverse;
-            margin-right: 15vw;
         }
         .container-figth-control{
             height: 20%;
             @include center($jc:space-between);
             border-top: 1px solid #343434;
             padding: 0 4vw;
+            background-image: url("/background-battle-comments.jpg");
             .figth-comments{
-                width: 45%;
+                width: 50%;
+                height: 70%;
+                background-color: rgba($color: #343434, $alpha: .8);
+                border-radius: .5rem;
+                @include center($fd:column, $jc:space-evenly);
                 p{
                     font-size: .7rem;
-                    margin-top: 2vh;
+                    width: 90%;
+                    background-color: transparent;
                 }
             }
             .figth-buttons-container{
                 width: 45%;
                 @include center($jc:space-between);
+                background-color: transparent;
                 .figth-buttons{
                     @include button($height:7vh, $width:13vw);
                     @include center;
@@ -93,19 +132,32 @@
         }
     }
     .winner-container{
-        @include center($fd:column);
         height: 100%;
-        .winner-title{
-            @include center;
-            height: 15%;
-        }
-        .winner-img{
-            height: 50%;
-            margin-bottom: 3vh;
-        }
-        .winner-button-back{
-            @include button($height:7vh, $width:35vw);
-            @include center;
+        background-image: url("/background-battle.jpg");
+        background-position: center;
+        border-radius: 1rem;
+        background-size: cover;
+        .winner-filter{
+            background-color: rgba($color: #343434, $alpha: .5);
+            height: 100%;
+            width: 100%;
+            border-radius: 1rem;
+            @include center($fd:column);
+            .winner-title{
+                @include center;
+                height: 15%;
+                background-color: transparent;
+            }
+            .winner-img{
+                background-color: transparent;
+                height: 50%;
+                margin-bottom: 3vh;
+            }
+            .winner-button-back{
+                background-color: transparent;
+                @include button($height:7vh, $width:35vw);
+                @include center;
+            }
         }
     }
     
@@ -114,50 +166,58 @@
 @media (max-width:768px){
     main{
         .container-figth-home{
-            height: 90vh;
-            width: 90vw;
+            @include container-responsive;
             .figth-container{
                 .figth-team-title{
-                    width: 100%;
+                    width: 80%;
+                    line-height: 2rem;
                     text-align: center;
                 }
                 .figth-team-container{
                     flex-direction: column;
+                    justify-content: space-evenly;
                     .figth-team-pokes{
-                        @include center;
-                        margin-bottom: 2vh;
+                        flex-direction: row;
+                        margin: 0;
+                        width: 80%;
+                        height: 30%;
                         .figth-team-img{
-                            height: 150px;
+                            width: 130px;
+                            max-width: 350px;
                         }
                     }
                 }
                 .figth-team-button-container{
-                    @include center;
+                    @include center($fd:column, $jc:space-evenly);
                     .figth-team-button{
-                        width: 55vw;
+                        width: 70%;
                     }
                 }
             }
             .container-figth-screen{
-                .figth-card, .figth-card-selected{
-                    margin: 0 5vw;
-                    height: 35%;
-                    .figth-card-img{
-                        height: 170px;
-                    }
-                    .container-figth-card{
-                        .figth-card-hp{
-                            font-size: .7rem;
+                .container-cards{
+                    height: 60%;
+                    .figth-card, .figth-card-selected{
+                        margin: 0 5vw;
+                        height: 35%;
+                        .figth-card-img{
+                            height: 170px;
+                        }
+                        .container-figth-card{
+                            width: 50%;
+                            .figth-card-hp{
+                                font-size: .7rem;
+                            }
                         }
                     }
                 }
                 .container-figth-control{
-                    flex-direction: column-reverse;
-                    margin-top: 3vh;
-                    height: 30%;
+                    flex-direction: column;
+                    height: 40%;
                     justify-content: space-evenly;
                     .figth-comments{
                         width: 100%;
+                        height: 50%;
                         line-height: 1rem;
                         p{
                             font-size: .9rem;
@@ -176,6 +236,10 @@
                         text-align: center;
                         line-height: 2rem;
                         font-size: 1.3rem;
+                    }
+                    .winner-img{
+                        height: 40%;
+                        margin-bottom: 7vh;
                     }
                     .winner-button-back{
                         width: 80vw;

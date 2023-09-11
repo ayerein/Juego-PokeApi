@@ -17,17 +17,17 @@ export const CardPoke = ({ fact }) => {
             {
                 !id && <p className="title-new-poke">Felicidades {fact.name} es tu nuevo compañero!</p>
             }
-            <p className="card-poke-name">{fact.name}</p>
             <section className="card-poke">
                 <div className="card-poke-container">
+                    <p className="card-poke-name">{fact.name}</p>
                     <img src={fact.img} alt={fact.name} className="card-poke-img" />
                     <p className="card-poke-id">{fact.id}</p>
                 </div>
-                <div className="card-poke-container card-poke-container-stats">
+                <div className="card-poke-container-stats">
                     <p className="card-poke-stats">Hp: {fact.hp}</p>
-                    <p className="card-poke-stats">Attack: {fact.attack}</p>
-                    <p className="card-poke-stats">Defense: {fact.defense}</p>
-                    <p className="card-poke-stats">Speed: {fact.speed}</p>
+                    <p className="card-poke-stats">Ataque: {fact.attack}</p>
+                    <p className="card-poke-stats">Defensa: {fact.defense}</p>
+                    <p className="card-poke-stats">Velacidad: {fact.speed}</p>
                 </div>
             </section>
             <section className="card-buttons">

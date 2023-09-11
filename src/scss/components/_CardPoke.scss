@@ -11,16 +11,29 @@
     .card-poke{
         @include center($jc:space-around);
         width: 100%;
+        height: 70%;
         .card-poke-container{
             @include center($fd:column);
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            background-color: rgba($color: #343434, $alpha: .6);
+            border-radius: 1rem;
+            height: 80%;
+            width: 35%;
             .card-poke-img{
-                height: 250px;
-                border-radius: 1rem;
-                box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+                height: 60%;
                 margin-bottom: 3vh;
             }
+        }
+        .card-poke-container-stats{
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            background-color: rgba($color: #343434, $alpha: .6);
+            border-radius: .5rem;
+            height: 50%;
+            width: 40%;
+            @include center($fd:column);
             .card-poke-stats{
                 line-height: 2rem;
+                width: 80%;
             }
         }
     }
@@ -36,15 +49,25 @@
 
 @media (max-width:768px){
     .container-card-poke{
-        
+        box-shadow: none;
+        border: none;
         @include container-responsive;
         .title-new-poke{
             line-height: 2rem;
         }
         .card-poke{
             flex-direction: column;
+            .card-poke-container{
+                width: 80%;
+                height: 60%;
+                .card-poke-img{
+                    height: 60%;
+                }
+            }
             .card-poke-container-stats{
                 margin-top: 3vh;
+                width: 80%;
+                text-align: center;
             }
         }
         .card-buttons{

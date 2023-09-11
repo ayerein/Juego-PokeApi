@@ -57,8 +57,10 @@ export const FigthScreen = ({ pokeSelected, enemyPoke }) => {
                 <FigthWinner winner={winner}/>
                 :
                 <>
-                <FigthCard poke={enemyPoke} hpInitial={enemyHpInitial} selected=''/>
-                <FigthCard poke={pokeSelected} hpInitial={pokeHpInitial} selected='-selected'/>
+                <div className="container-cards">
+                    <FigthCard poke={enemyPoke} hpInitial={enemyHpInitial} selected=''/>
+                    <FigthCard poke={pokeSelected} hpInitial={pokeHpInitial} selected='-selected'/>
+                </div>
                 <FigthButtons getFigth={getFigth} comments={comments} />
                 </>
             }

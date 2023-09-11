@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 import { getRandomPoke } from "../logic/getRandomPoke"
 import { FigthScreen } from "../container/FigthScreen"
 import { getTeam } from "../logic/getTeam"
@@ -22,8 +24,8 @@ export const Figth = () => {
     }
 
     const starFigth = async() => {
-        const getPoke = await getRandomPoke()
-        setEnemyPoke(getPoke)
+        const getPoke = await getRandomPoke() 
+        pokeSelected && setEnemyPoke(getPoke)
     }
     
     return(
@@ -36,10 +38,8 @@ export const Figth = () => {
                 <p className="figth-team-title">Para comenzar selecciona un poke.</p>
                 <FigthTeam team={team} selectPoke={selectPoke}/>
                 <div className="figth-team-button-container">
-                    {
-                        pokeSelected &&
-                        <button onClick={starFigth} className="figth-team-button">Continuar</button>
-                    }
+                    <button onClick={starFigth} className="figth-team-button">Continuar</button>
+                    <Link to="/" className="figth-team-button">Volver</Link>
                 </div>
             </section>
         }

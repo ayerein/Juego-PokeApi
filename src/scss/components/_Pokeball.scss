@@ -1,9 +1,15 @@
-.pokeball{
+@import './Const';
+
+.container-pokeball{
+  @include container;
+  @include center($fd:column, $jc:space-evenly);
+  .pokeball{
     height: 300px;
     width: 300px;
     border: 1px solid black;
     border-radius: 150px;
     box-shadow: 10px 10px 32px 0px rgba(0,0,0,0.75);
+    position: relative;
     .pokeball-red{
         height: 50%;
         width: 100%;
@@ -19,8 +25,8 @@
         border: 5px solid black;
         background-color: white;
         position: absolute;
-        bottom: 44vh;
-        left: 47vw;
+        top: 40%;
+        left: 40%;
         &:hover{
           border: 6px solid black;
           cursor: pointer;
@@ -35,12 +41,21 @@
         box-shadow: inset 0px 7px 0px 0px rgba(0,0,0,1);
       }
   }
+  .poke-back{
+    @include center;
+    @include button($height:7vh, $width:15vw)
+  }
+}
 
-  @media (max-width:768px){
-    .pokeball{
-      .pokeball-button{
-        left: 42%;
-        top: 47%
-      }
+@media (max-width:768px){
+  .container-pokeball{
+    @include container-responsive;
+    .title-pokeball{
+      width: 80%;
+      text-align: center;
+    }
+    .poke-back{
+      width: 45vw;
     }
   }
+}

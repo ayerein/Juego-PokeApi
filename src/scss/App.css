@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #202020;
   font-family: "Press Start 2P", cursive;
   color: #ffffff;
 }
 
 main {
+  background-color: #202020;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,11 +17,15 @@ main {
 }
 
 .container-initial-page {
-  height: 80vh;
-  width: 80vw;
+  height: 90vh;
+  width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,12 +38,13 @@ main {
   line-height: 2rem;
 }
 .container-initial-page .button-first-poke {
-  border: 1px solid #343434;
   height: 10vh;
   width: 45vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
   margin-top: 7vh;
   display: flex;
   justify-content: center;
@@ -52,31 +57,54 @@ main {
 
 @media (max-width: 768px) {
   .container-initial-page {
-    height: 90vh;
-    width: 85vw;
+    height: 100vh;
+    width: 100vw;
   }
   .container-initial-page .button-first-poke {
-    border: 1px solid #343434;
     height: 15vh;
     width: 65vw;
     text-decoration: none;
     border-radius: 3rem;
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    background-color: rgba(52, 52, 52, 0.8);
+    font-size: 1rem;
     text-align: center;
     border-radius: 1rem;
+    padding: 0 5%;
+    line-height: 2rem;
   }
   .container-initial-page .button-first-poke:hover {
     background-color: #282828;
   }
 }
-.pokeball {
+.container-pokeball {
+  height: 90vh;
+  width: 90vw;
+  border: 2px solid #343434;
+  border-radius: 1rem;
+  box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../../public/background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
+}
+.container-pokeball .pokeball {
   height: 300px;
   width: 300px;
   border: 1px solid black;
   border-radius: 150px;
   box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+  position: relative;
 }
-.pokeball .pokeball-red {
+.container-pokeball .pokeball .pokeball-red {
   height: 50%;
   width: 100%;
   background-color: red;
@@ -84,21 +112,21 @@ main {
   border-top-right-radius: 150px;
   box-shadow: inset 0px -7px 0px 0px rgb(0, 0, 0);
 }
-.pokeball .pokeball-button {
+.container-pokeball .pokeball .pokeball-button {
   height: 70px;
   width: 70px;
   border-radius: 35px;
   border: 5px solid black;
   background-color: white;
   position: absolute;
-  bottom: 44vh;
-  left: 47vw;
+  top: 40%;
+  left: 40%;
 }
-.pokeball .pokeball-button:hover {
+.container-pokeball .pokeball .pokeball-button:hover {
   border: 6px solid black;
   cursor: pointer;
 }
-.pokeball .pokeball-white {
+.container-pokeball .pokeball .pokeball-white {
   height: 50%;
   width: 100%;
   background-color: white;
@@ -106,19 +134,46 @@ main {
   border-bottom-right-radius: 150px;
   box-shadow: inset 0px 7px 0px 0px rgb(0, 0, 0);
 }
+.container-pokeball .poke-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 7vh;
+  width: 15vw;
+  text-decoration: none;
+  border-radius: 3rem;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
+}
+.container-pokeball .poke-back:hover {
+  background-color: #282828;
+}
 
 @media (max-width: 768px) {
-  .pokeball .pokeball-button {
-    left: 42%;
-    top: 47%;
+  .container-pokeball {
+    height: 100vh;
+    width: 100vw;
+  }
+  .container-pokeball .title-pokeball {
+    width: 80%;
+    text-align: center;
+  }
+  .container-pokeball .poke-back {
+    width: 45vw;
   }
 }
 .container-card-poke {
-  height: 80vh;
-  width: 80vw;
+  height: 90vh;
+  width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -135,21 +190,36 @@ main {
   align-items: center;
   flex-direction: row;
   width: 100%;
+  height: 70%;
 }
 .container-card-poke .card-poke .card-poke-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.6);
+  border-radius: 1rem;
+  height: 80%;
 }
 .container-card-poke .card-poke .card-poke-container .card-poke-img {
   height: 250px;
-  border-radius: 1rem;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 3vh;
 }
-.container-card-poke .card-poke .card-poke-container .card-poke-stats {
+.container-card-poke .card-poke .card-poke-container-stats {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.6);
+  border-radius: 0.5rem;
+  height: 50%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container-card-poke .card-poke .card-poke-container-stats .card-poke-stats {
   line-height: 2rem;
+  width: 80%;
 }
 .container-card-poke .card-buttons {
   width: 100%;
@@ -159,12 +229,13 @@ main {
   flex-direction: row;
 }
 .container-card-poke .card-buttons .card-poke-button-volver, .container-card-poke .card-buttons .card-drop-poke {
-  border: 1px solid #343434;
   height: 7vh;
   width: 25vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,8 +247,10 @@ main {
 
 @media (max-width: 768px) {
   .container-card-poke {
-    height: 90vh;
-    width: 85vw;
+    box-shadow: none;
+    border: none;
+    height: 100vh;
+    width: 100vw;
   }
   .container-card-poke .title-new-poke {
     line-height: 2rem;
@@ -185,8 +258,13 @@ main {
   .container-card-poke .card-poke {
     flex-direction: column;
   }
+  .container-card-poke .card-poke .card-poke-container {
+    width: 80%;
+  }
   .container-card-poke .card-poke .card-poke-container-stats {
     margin-top: 3vh;
+    width: 80%;
+    text-align: center;
   }
   .container-card-poke .card-buttons {
     flex-direction: column;
@@ -200,15 +278,23 @@ main {
   }
 }
 .container-home {
-  height: 80vh;
-  width: 80vw;
+  height: 90vh;
+  width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url("../../../public/background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
 }
 .container-home .home-title {
   font-size: 1.2rem;
@@ -222,70 +308,57 @@ main {
 .container-home .home-container-team {
   width: 100%;
   height: 60%;
-  border-bottom: 1px solid #383838;
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 .container-home .home-container-team .home-team-poke {
-  height: 70%; /* 
-width: 100%; */
+  height: 70%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   margin: 0 5vw;
   text-decoration: none;
+  background-color: rgba(52, 52, 52, 0.3);
+  border-radius: 1rem;
 }
 .container-home .home-container-team .home-team-poke:hover {
-  background-color: #383838;
-  border-radius: 15px;
+  background-color: rgba(52, 52, 52, 0.6);
+  border-radius: 1rem;
   cursor: pointer;
 }
 .container-home .home-container-team .home-team-poke .home-team-img {
   width: 80%;
   max-width: 180px;
-  background-color: transparent;
-}
-.container-home .home-container-team .home-team-poke .home-team-name {
-  background-color: transparent;
 }
 .container-home .container-button-new-poke {
   width: 100%;
   height: 25%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: row;
+  background-color: rgba(52, 52, 52, 0.5);
 }
 .container-home .container-button-new-poke .home-button-figth {
   text-decoration: none;
-  border: 1px solid #343434;
+}
+.container-home .container-button-new-poke .home-button-new-poke, .container-home .container-button-new-poke .home-button-figth {
   height: 7vh;
-  width: 30vw;
+  width: 25vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.container-home .container-button-new-poke .home-button-figth:hover {
-  background-color: #282828;
-}
-.container-home .container-button-new-poke .home-button-new-poke {
-  border: 1px solid #343434;
-  height: 7vh;
-  width: 30vw;
-  text-decoration: none;
-  border-radius: 3rem;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.container-home .container-button-new-poke .home-button-new-poke:hover {
+.container-home .container-button-new-poke .home-button-new-poke:hover, .container-home .container-button-new-poke .home-button-figth:hover {
   background-color: #282828;
 }
 .container-home .container-button-new-poke .full-team {
@@ -293,60 +366,50 @@ width: 100%; */
 }
 
 @media (max-width: 768px) {
-  /* .container-home{
-      @include container-responsive;
-      overflow: hidden;
-      .home-title{
-          width: 90%;
-          text-align: center;
-          line-height: 3rem;
-          height: 25%;
-      }
-      .home-container-team{
-          height: 50%;
-      }
-      .container-button-new-poke{
-          flex-direction: column-reverse;
-          .home-button-figth, .home-button-new-poke{
-              width: 45%;
-              height: 10vh;
-              text-align: center;
-          }
-      }
-  } */
-  main .home-container-team {
-    height: 75vh;
-    width: 85vw;
+  main .container-home {
+    height: 100vh;
+    width: 100vw;
+  }
+  main .container-home .home-title {
+    width: 80%;
+    line-height: 2rem;
+  }
+  main .container-home .home-container-team {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  main .container-home .home-container-team .home-team-poke {
+    flex-direction: row;
+    margin: 0;
+    width: 80%;
+    height: 30%;
+  }
+  main .container-home .home-container-team .home-team-poke .home-team-img {
+    width: 130px;
+    max-width: 350px;
+  }
+  main .container-home .container-button-new-poke {
     display: flex;
-    align-items: center;
-    overflow: scroll;
-  }
-  main .home-container-team .home-team-poke {
-    border: 1px solid #383838;
-    margin: 0 5vw;
-  }
-  main .home-container-team .home-team-poke .home-team-img {
-    width: 200px;
-  }
-  main .container-button-new-poke {
-    display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     flex-direction: column-reverse;
   }
-  main .container-button-new-poke .home-button-figth, main .container-button-new-poke .home-button-new-poke {
-    width: 45%;
-    height: 10vh;
+  main .container-home .container-button-new-poke .home-button-figth, main .container-home .container-button-new-poke .home-button-new-poke {
+    width: 70%;
     text-align: center;
   }
 }
 .container-figth-home {
-  height: 80vh;
-  width: 80vw;
+  height: 90vh;
+  width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-image: url("./background.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -358,48 +421,69 @@ width: 100%; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 90%;
+  height: 100%;
+  width: 100%;
 }
 .container-figth-home .figth-container .figth-team-title {
-  height: 20%;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 .container-figth-home .figth-container .figth-team-container {
+  width: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 100%;
 }
 .container-figth-home .figth-container .figth-team-container .figth-team-pokes {
-  height: 60%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 5vw;
+  text-decoration: none;
+  background-color: rgba(52, 52, 52, 0.3);
   border-radius: 1rem;
-  margin: 0 1vw;
-}
-.container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
-  height: 200px;
-  background-color: transparent;
 }
 .container-figth-home .figth-container .figth-team-container .figth-team-pokes:hover {
-  background-color: #343434;
+  background-color: rgba(52, 52, 52, 0.6);
+  border-radius: 1rem;
   cursor: pointer;
 }
+.container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
+  width: 80%;
+  max-width: 180px;
+}
 .container-figth-home .figth-container .figth-team-container .poke-selected {
-  background-color: #343434;
+  background-color: rgba(52, 52, 52, 0.6);
+  border-radius: 1rem;
 }
 .container-figth-home .figth-container .figth-team-button-container {
-  height: 20%;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgba(52, 52, 52, 0.5);
 }
 .container-figth-home .figth-container .figth-team-button-container .figth-team-button {
-  border: 1px solid #343434;
   height: 7vh;
-  width: 35vw;
+  width: 25vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .container-figth-home .figth-container .figth-team-button-container .figth-team-button:hover {
   background-color: #282828;
@@ -408,31 +492,60 @@ width: 100%; */
   cursor: pointer;
 }
 .container-figth-home .container-figth-screen {
-  height: 90%;
+  height: 100%;
   width: 100%;
 }
-.container-figth-home .container-figth-screen .figth-card, .container-figth-home .container-figth-screen .figth-card-selected {
-  height: 40%;
+.container-figth-home .container-figth-screen .container-cards {
+  height: 80%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../../../public/background-battle.jpg");
+  background-position: center;
+  background-size: cover;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.container-figth-home .container-figth-screen .container-cards .figth-card, .container-figth-home .container-figth-screen .container-cards .figth-card-selected {
+  background-color: transparent;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .container-figth-screen .figth-card .container-figth-card .figth-card-name, .container-figth-home .container-figth-screen .figth-card-selected .container-figth-card .figth-card-name {
-  margin-bottom: 1vh;
+.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card {
+  height: 50%;
+  width: 35%;
+  background-color: rgba(52, 52, 52, 0.5);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.container-figth-home .container-figth-screen .figth-card .container-figth-card .figth-card-hp, .container-figth-home .container-figth-screen .figth-card-selected .container-figth-card .figth-card-hp {
+.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-name, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-name {
+  margin-bottom: 1vh;
+  background-color: transparent;
+}
+.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-progress, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-progress {
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-hp, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-hp {
+  background-color: transparent;
   margin-top: 2vh;
 }
-.container-figth-home .container-figth-screen .figth-card .figth-card-img, .container-figth-home .container-figth-screen .figth-card-selected .figth-card-img {
+.container-figth-home .container-figth-screen .container-cards .figth-card .figth-card-img, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .figth-card-img {
+  background-color: transparent;
   height: 80%;
 }
-.container-figth-home .container-figth-screen .figth-card {
-  margin-left: 15vw;
-}
-.container-figth-home .container-figth-screen .figth-card-selected {
+.container-figth-home .container-figth-screen .container-cards .figth-card-selected {
   flex-direction: row-reverse;
-  margin-right: 15vw;
 }
 .container-figth-home .container-figth-screen .container-figth-control {
   height: 20%;
@@ -442,13 +555,22 @@ width: 100%; */
   flex-direction: row;
   border-top: 1px solid #343434;
   padding: 0 4vw;
+  background-image: url("../../../public/background-battle-comments.jpg");
 }
 .container-figth-home .container-figth-screen .container-figth-control .figth-comments {
-  width: 45%;
+  width: 50%;
+  height: 70%;
+  background-color: rgba(52, 52, 52, 0.8);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 .container-figth-home .container-figth-screen .container-figth-control .figth-comments p {
   font-size: 0.7rem;
-  margin-top: 2vh;
+  width: 90%;
+  background-color: transparent;
 }
 .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container {
   width: 45%;
@@ -456,14 +578,16 @@ width: 100%; */
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  background-color: transparent;
 }
 .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons {
-  border: 1px solid #343434;
   height: 7vh;
   width: 13vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,35 +601,135 @@ width: 100%; */
   cursor: pointer;
 }
 .container-figth-home .winner-container {
+  height: 100%;
+  background-image: url("../../../public/background-battle.jpg");
+  background-position: center;
+  border-radius: 1rem;
+  background-size: cover;
+}
+.container-figth-home .winner-container .winner-filter {
+  background-color: rgba(52, 52, 52, 0.5);
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
 }
-.container-figth-home .winner-container .winner-title {
+.container-figth-home .winner-container .winner-filter .winner-title {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   height: 15%;
+  background-color: transparent;
 }
-.container-figth-home .winner-container .winner-img {
+.container-figth-home .winner-container .winner-filter .winner-img {
+  background-color: transparent;
   height: 50%;
   margin-bottom: 3vh;
 }
-.container-figth-home .winner-container .winner-button-back {
-  border: 1px solid #343434;
+.container-figth-home .winner-container .winner-filter .winner-button-back {
+  background-color: transparent;
   height: 7vh;
   width: 35vw;
   text-decoration: none;
   border-radius: 3rem;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgba(52, 52, 52, 0.8);
+  font-size: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .winner-container .winner-button-back:hover {
+.container-figth-home .winner-container .winner-filter .winner-button-back:hover {
   background-color: #282828;
+}
+
+@media (max-width: 768px) {
+  main .container-figth-home {
+    height: 100vh;
+    width: 100vw;
+  }
+  main .container-figth-home .figth-container .figth-team-title {
+    width: 80%;
+    line-height: 2rem;
+    text-align: center;
+  }
+  main .container-figth-home .figth-container .figth-team-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  main .container-figth-home .figth-container .figth-team-container .figth-team-pokes {
+    flex-direction: row;
+    margin: 0;
+    width: 80%;
+    height: 30%;
+  }
+  main .container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
+    width: 130px;
+    max-width: 350px;
+  }
+  main .container-figth-home .figth-container .figth-team-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+  }
+  main .container-figth-home .figth-container .figth-team-button-container .figth-team-button {
+    width: 70%;
+  }
+  main .container-figth-home .container-figth-screen .container-cards {
+    height: 60%;
+  }
+  main .container-figth-home .container-figth-screen .container-cards .figth-card, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected {
+    margin: 0 5vw;
+    height: 35%;
+  }
+  main .container-figth-home .container-figth-screen .container-cards .figth-card .figth-card-img, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .figth-card-img {
+    height: 170px;
+  }
+  main .container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card {
+    width: 50%;
+  }
+  main .container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-hp, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-hp {
+    font-size: 0.7rem;
+  }
+  main .container-figth-home .container-figth-screen .container-figth-control {
+    flex-direction: column;
+    height: 40%;
+    justify-content: space-evenly;
+  }
+  main .container-figth-home .container-figth-screen .container-figth-control .figth-comments {
+    width: 100%;
+    height: 50%;
+    line-height: 1rem;
+  }
+  main .container-figth-home .container-figth-screen .container-figth-control .figth-comments p {
+    font-size: 0.9rem;
+  }
+  main .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container {
+    width: 100%;
+  }
+  main .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons {
+    width: 45%;
+  }
+  main .container-figth-home .container-figth-screen .winner-container {
+    justify-content: space-around;
+  }
+  main .container-figth-home .container-figth-screen .winner-container .winner-title {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
+  main .container-figth-home .container-figth-screen .winner-container .winner-img {
+    height: 40%;
+    margin-bottom: 7vh;
+  }
+  main .container-figth-home .container-figth-screen .winner-container .winner-button-back {
+    width: 80vw;
+    text-align: center;
+  }
 }/*# sourceMappingURL=App.css.map */
