@@ -11,8 +11,10 @@ export const getRandomPoke = async () => {
     name = name.charAt(0).toUpperCase() + name.slice(1)
     const fact = {
         name: name,
-        id: data.id,
+        number: data.id,
+        id: crypto.randomUUID(),
         img: data.sprites.other.home.front_default,
+        cup: 0,
         hp: data.stats[0].base_stat,
         attack: data.stats[1].base_stat,
         defense: data.stats[2].base_stat,

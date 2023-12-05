@@ -1,8 +1,9 @@
-import { resetGameStorage } from "../logic/storage"
 import { Link } from "react-router-dom"
+import { resetGame } from "../../logic/fight"
 
-export const FigthWinner = ({ winner }) => {
-    resetGameStorage()
+export const FightWinner = ({ winner }) => {
+    
+    resetGame()
     return(
         <div className="winner-container">
             <div className="winner-filter">

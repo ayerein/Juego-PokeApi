@@ -1,29 +1,16 @@
-import { useState } from "react"
-import { getRandomPoke } from "../logic/getRandomPoke"
-import { Pokeball } from "../components/Pokeball"
-import { CardPoke } from "../components/CardPoke"
+import { Loading } from "../components/Loading"
+import { ContainerNewPoke } from "../container/ContainerNewPoke"
+import { useGetPoke } from "../hooks/useGetPoke"
 
 export const NewPoke = () => {
-    const storageTeam = window.localStorage.getItem('team')
-    const team =  JSON.parse(storageTeam)
-    const [ newPoke, setNewPoke ] = useState()
-    let newTeam = team ? team : []
+  const { team } = useGetPoke()
 
-    const handleClic = async (event) => {
-      event.currentTarget.disabled = true;
-      const getPoke = await getRandomPoke()
-      setNewPoke(getPoke)
-      newTeam.push(getPoke)
-      window.localStorage.setItem('team', JSON.stringify(newTeam))
-      }
+  const RenderLoading = () => {
+    if(team === 'loading') return <Loading />
+    if(team && team.length < 3) return <ContainerNewPoke />
+  }
 
-    return(
-            newPoke ?
-            <>
-            <CardPoke fact={newPoke} />
-            </>
-            :
-            <Pokeball handleClic={handleClic} />
-          
-    )
+  return(
+    <RenderLoading />
+  )
 }

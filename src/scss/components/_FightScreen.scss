@@ -1,22 +1,22 @@
 @import './Const';
 
-.container-figth-home{
+.container-fight-home{
     @include container;
     @include center;
     padding: 0;
-    .figth-container{
+    .fight-container{
         @include center($fd:column);
         height: 100%;
         width: 100%;
-        .figth-team-title{
+        .fight-team-title{
             height: 15%;
             @include center;
         }
-        .figth-team-container{
+        .fight-team-container{
             width: 100%;
             height: 60%;
             @include center;
-            .figth-team-pokes{
+            .fight-team-pokes{
                 height: 70%;
                 @include center($jc:space-around, $fd:column);
                 margin: 0 5vw;
@@ -28,22 +28,22 @@
                     border-radius: 1rem;
                     cursor: pointer;
                 }
-                .figth-team-img{
+                .fight-team-img{
                     width: 80%;
                     max-width: 180px;
                 }
             }
             .poke-selected{
-                background-color: rgba($color: #343434, $alpha: .6);
+                background-color: rgba($color: #202020, $alpha: .6);
                 border-radius: 1rem;
             }
         }
-        .figth-team-button-container{
+        .fight-team-button-container{
             height: 25%;
             width: 100%;
             @include center($jc:space-evenly);
             background-color: rgba($color: #343434, $alpha: .5);
-            .figth-team-button{
+            .fight-team-button{
                 @include button($height:7vh, $width:25vw);
                 @include center;
                 &:hover{
@@ -52,9 +52,10 @@
             }
         }
     }
-    .container-figth-screen{
+    .container-fight-screen{
         height: 100%;
-        width: 100%;
+        width: 100%;/* 
+        @include center; */
         .container-cards{
             height: 80%;
             width: 100%;
@@ -64,47 +65,47 @@
             background-size: cover;
             border-top-right-radius: 1rem;
             border-top-left-radius: 1rem;
-            .figth-card, .figth-card-selected{
+            .fight-card, .fight-card-selected{
                 background-color: transparent;
                 height: 50%;
                 width: 100%;
                 @include center($jc:space-evenly);
-                .container-figth-card{
+                .container-fight-card{
                     height: 50%;
                     width: 35%;
                     background-color: rgba($color: #343434, $alpha: .5);
                     border-radius: .5rem;
                     @include center($fd:column);
-                    .figth-card-name{
+                    .fight-card-name{
                         margin-bottom: 1vh;
                         background-color: transparent;
                     }
-                    .figth-card-progress{
+                    .fight-card-progress{
                         width: 80%;
                         border: 1px solid black;
                         border-radius: 1rem;
                     }
-                    .figth-card-hp{
+                    .fight-card-hp{
                         background-color: transparent;
                         margin-top: 2vh;
                     }
                 }
-                .figth-card-img{
+                .fight-card-img{
                     background-color: transparent;
                     height: 80%;
                 }
             }
-            .figth-card-selected{
+            .fight-card-selected{
                 flex-direction: row-reverse;
             }
         }
-        .container-figth-control{
+        .container-fight-control{
             height: 20%;
             @include center($jc:space-between);
             border-top: 1px solid #343434;
             padding: 0 4vw;
             background-image: url("/background-battle-comments.jpg");
-            .figth-comments{
+            .fight-comments{
                 width: 50%;
                 height: 70%;
                 background-color: rgba($color: #343434, $alpha: .8);
@@ -116,11 +117,11 @@
                     background-color: transparent;
                 }
             }
-            .figth-buttons-container{
+            .fight-buttons-container{
                 width: 45%;
                 @include center($jc:space-between);
                 background-color: transparent;
-                .figth-buttons{
+                .fight-buttons{
                     @include button($height:7vh, $width:13vw);
                     @include center;
                     font-size: .8rem;
@@ -165,18 +166,18 @@
 
 @media (max-width:768px){
     main{
-        .container-figth-home{
+        .container-fight-home{
             @include container-responsive;
-            .figth-container{
-                .figth-team-title{
+            .fight-container{
+                .fight-team-title{
                     width: 80%;
                     line-height: 2rem;
                     text-align: center;
                 }
-                .figth-team-container{
+                .fight-team-container{
                     flex-direction: column;
                     justify-content: space-evenly;
-                    .figth-team-pokes{
+                    .fight-team-pokes{
                         flex-direction: row;
                         margin: 0;
                         width: 80%;
@@ -187,35 +188,35 @@
                         }
                     }
                 }
-                .figth-team-button-container{
+                .fight-team-button-container{
                     @include center($fd:column, $jc:space-evenly);
-                    .figth-team-button{
+                    .fight-team-button{
                         width: 70%;
                     }
                 }
             }
-            .container-figth-screen{
+            .container-fight-screen{
                 .container-cards{
                     height: 60%;
-                    .figth-card, .figth-card-selected{
+                    .fight-card, .fight-card-selected{
                         margin: 0 5vw;
                         height: 35%;
-                        .figth-card-img{
+                        .fight-card-img{
                             height: 170px;
                         }
-                        .container-figth-card{
+                        .container-fight-card{
                             width: 50%;
-                            .figth-card-hp{
+                            .fight-card-hp{
                                 font-size: .7rem;
                             }
                         }
                     }
                 }
-                .container-figth-control{
+                .container-fight-control{
                     flex-direction: column;
                     height: 40%;
                     justify-content: space-evenly;
-                    .figth-comments{
+                    .fight-comments{
                         width: 100%;
                         height: 50%;
                         line-height: 1rem;
@@ -223,9 +224,9 @@
                             font-size: .9rem;
                         }
                     }
-                    .figth-buttons-container{
+                    .fight-buttons-container{
                         width: 100%;
-                        .figth-buttons{
+                        .fight-buttons{
                             width: 45%;
                         }
                     }

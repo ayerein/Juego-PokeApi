@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom"
+import { Login } from "./Login/Login"
 
 export const InitialPage = () => {
     return(
         <div className="container-initial-page">
-            <p className="text-initial-page">Hola! vemos que esta es tu primera vez en el juego.</p>
-            <p className="text-initial-page">Para poder jugar debes tener al menos un pokemón de compañero.</p>
-            <Link to="/newpoke" className="button-first-poke">Quiero mi primer poke</Link>
+            <p className="text-initial-page">Hola bienvenidx! Para poder jugar debes iniciar con tu cuenta.</p>
+            <Login />
         </div>
     )
 }

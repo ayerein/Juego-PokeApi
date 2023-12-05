@@ -3,6 +3,16 @@
 .container-home{
     @include container;
     @include center($fd:column);
+    .home-exit{
+        width: 100%;
+        text-align: end;
+        margin: 1vh 3vw 0 0;
+        font-size: .8rem;
+        &:hover{
+            cursor: pointer;
+            color: #adadad;
+        }
+    }
     .home-title{
         font-size: 1.2rem;
         height: 15%;
@@ -36,11 +46,12 @@
         height: 25%;
         @include center($jc:space-evenly);
         background-color: rgba($color: #343434, $alpha: .5);
+        text-align: center;
         .home-button-figth{
             text-decoration: none;
         }
         .home-button-new-poke, .home-button-figth{
-            @include button($height:7vh, $width:25vw);
+            @include button($height:7vh, $width:30vw);
             @include center;
         }
         .full-team{

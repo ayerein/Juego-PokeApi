@@ -22,7 +22,7 @@ main {
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-image: url("./background.jpg");
+  background-image: url("/background.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -83,7 +83,7 @@ main {
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-image: url("./background.jpg");
+  background-image: url("/background.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -91,10 +91,11 @@ main {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-image: url("../../../public/background.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 1rem;
+}
+.container-pokeball .title-pokeball {
+  text-align: center;
+  width: 90%;
+  line-height: 2rem;
 }
 .container-pokeball .pokeball {
   height: 300px;
@@ -170,7 +171,7 @@ main {
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-image: url("./background.jpg");
+  background-image: url("/background.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -201,9 +202,10 @@ main {
   background-color: rgba(52, 52, 52, 0.6);
   border-radius: 1rem;
   height: 80%;
+  width: 35%;
 }
 .container-card-poke .card-poke .card-poke-container .card-poke-img {
-  height: 250px;
+  height: 60%;
   margin-bottom: 3vh;
 }
 .container-card-poke .card-poke .card-poke-container-stats {
@@ -219,7 +221,7 @@ main {
 }
 .container-card-poke .card-poke .card-poke-container-stats .card-poke-stats {
   line-height: 2rem;
-  width: 80%;
+  width: 85%;
 }
 .container-card-poke .card-buttons {
   width: 100%;
@@ -260,6 +262,10 @@ main {
   }
   .container-card-poke .card-poke .card-poke-container {
     width: 80%;
+    height: 60%;
+  }
+  .container-card-poke .card-poke .card-poke-container .card-poke-img {
+    height: 60%;
   }
   .container-card-poke .card-poke .card-poke-container-stats {
     margin-top: 3vh;
@@ -277,13 +283,53 @@ main {
     width: 85%;
   }
 }
+.loading-poke {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+  border-radius: 50%;
+  outline: 5px solid black;
+  animation: spin 2s linear infinite;
+}
+.loading-poke::before {
+  content: "";
+  position: absolute;
+  height: 7px;
+  width: 100%;
+  background: black;
+  top: 100px;
+  transform: translatey(-50%);
+}
+.loading-poke::after {
+  content: "";
+  position: absolute;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background: white;
+  top: 100px;
+  left: 100px;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 5px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .container-home {
   height: 90vh;
   width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-image: url("./background.jpg");
+  background-image: url("/background.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -291,10 +337,6 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url("../../../public/background.jpg");
-  background-position: center;
-  background-size: cover;
-  border-radius: 1rem;
 }
 .container-home .home-title {
   font-size: 1.2rem;
@@ -341,6 +383,7 @@ main {
   align-items: center;
   flex-direction: row;
   background-color: rgba(52, 52, 52, 0.5);
+  text-align: center;
 }
 .container-home .container-button-new-poke .home-button-figth {
   text-decoration: none;
@@ -400,13 +443,13 @@ main {
     text-align: center;
   }
 }
-.container-figth-home {
+.container-fight-home {
   height: 90vh;
   width: 90vw;
   border: 2px solid #343434;
   border-radius: 1rem;
   box-shadow: 12px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-image: url("./background.jpg");
+  background-image: url("/background.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 1rem;
@@ -416,7 +459,7 @@ main {
   flex-direction: row;
   padding: 0;
 }
-.container-figth-home .figth-container {
+.container-fight-home .fight-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -424,14 +467,14 @@ main {
   height: 100%;
   width: 100%;
 }
-.container-figth-home .figth-container .figth-team-title {
+.container-fight-home .fight-container .fight-team-title {
   height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .figth-container .figth-team-container {
+.container-fight-home .fight-container .fight-team-container {
   width: 100%;
   height: 60%;
   display: flex;
@@ -439,7 +482,7 @@ main {
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .figth-container .figth-team-container .figth-team-pokes {
+.container-fight-home .fight-container .fight-team-container .fight-team-pokes {
   height: 70%;
   display: flex;
   justify-content: space-around;
@@ -450,20 +493,20 @@ main {
   background-color: rgba(52, 52, 52, 0.3);
   border-radius: 1rem;
 }
-.container-figth-home .figth-container .figth-team-container .figth-team-pokes:hover {
+.container-fight-home .fight-container .fight-team-container .fight-team-pokes:hover {
   background-color: rgba(52, 52, 52, 0.6);
   border-radius: 1rem;
   cursor: pointer;
 }
-.container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
+.container-fight-home .fight-container .fight-team-container .fight-team-pokes .fight-team-img {
   width: 80%;
   max-width: 180px;
 }
-.container-figth-home .figth-container .figth-team-container .poke-selected {
-  background-color: rgba(52, 52, 52, 0.6);
+.container-fight-home .fight-container .fight-team-container .poke-selected {
+  background-color: rgba(32, 32, 32, 0.6);
   border-radius: 1rem;
 }
-.container-figth-home .figth-container .figth-team-button-container {
+.container-fight-home .fight-container .fight-team-button-container {
   height: 25%;
   width: 100%;
   display: flex;
@@ -472,7 +515,7 @@ main {
   flex-direction: row;
   background-color: rgba(52, 52, 52, 0.5);
 }
-.container-figth-home .figth-container .figth-team-button-container .figth-team-button {
+.container-fight-home .fight-container .fight-team-button-container .fight-team-button {
   height: 7vh;
   width: 25vw;
   text-decoration: none;
@@ -485,30 +528,30 @@ main {
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .figth-container .figth-team-button-container .figth-team-button:hover {
+.container-fight-home .fight-container .fight-team-button-container .fight-team-button:hover {
   background-color: #282828;
 }
-.container-figth-home .figth-container .figth-team-button-container .figth-team-button:hover {
+.container-fight-home .fight-container .fight-team-button-container .fight-team-button:hover {
   cursor: pointer;
 }
-.container-figth-home .container-figth-screen {
+.container-fight-home .container-fight-screen {
   height: 100%;
   width: 100%;
 }
-.container-figth-home .container-figth-screen .container-cards {
+.container-fight-home .container-fight-screen .container-cards {
   height: 80%;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-image: url("../../../public/background-battle.jpg");
+  background-image: url("/background-battle.jpg");
   background-position: center;
   background-size: cover;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card, .container-figth-home .container-figth-screen .container-cards .figth-card-selected {
+.container-fight-home .container-fight-screen .container-cards .fight-card, .container-fight-home .container-fight-screen .container-cards .fight-card-selected {
   background-color: transparent;
   height: 50%;
   width: 100%;
@@ -517,7 +560,7 @@ main {
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card {
+.container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card, .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card {
   height: 50%;
   width: 35%;
   background-color: rgba(52, 52, 52, 0.5);
@@ -527,27 +570,27 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-name, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-name {
+.container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card .fight-card-name, .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card .fight-card-name {
   margin-bottom: 1vh;
   background-color: transparent;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-progress, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-progress {
+.container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card .fight-card-progress, .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card .fight-card-progress {
   width: 80%;
   border: 1px solid black;
   border-radius: 1rem;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-hp, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-hp {
+.container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card .fight-card-hp, .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card .fight-card-hp {
   background-color: transparent;
   margin-top: 2vh;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card .figth-card-img, .container-figth-home .container-figth-screen .container-cards .figth-card-selected .figth-card-img {
+.container-fight-home .container-fight-screen .container-cards .fight-card .fight-card-img, .container-fight-home .container-fight-screen .container-cards .fight-card-selected .fight-card-img {
   background-color: transparent;
   height: 80%;
 }
-.container-figth-home .container-figth-screen .container-cards .figth-card-selected {
+.container-fight-home .container-fight-screen .container-cards .fight-card-selected {
   flex-direction: row-reverse;
 }
-.container-figth-home .container-figth-screen .container-figth-control {
+.container-fight-home .container-fight-screen .container-fight-control {
   height: 20%;
   display: flex;
   justify-content: space-between;
@@ -555,9 +598,9 @@ main {
   flex-direction: row;
   border-top: 1px solid #343434;
   padding: 0 4vw;
-  background-image: url("../../../public/background-battle-comments.jpg");
+  background-image: url("/background-battle-comments.jpg");
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-comments {
+.container-fight-home .container-fight-screen .container-fight-control .fight-comments {
   width: 50%;
   height: 70%;
   background-color: rgba(52, 52, 52, 0.8);
@@ -567,12 +610,12 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-comments p {
+.container-fight-home .container-fight-screen .container-fight-control .fight-comments p {
   font-size: 0.7rem;
   width: 90%;
   background-color: transparent;
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container {
+.container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container {
   width: 45%;
   display: flex;
   justify-content: space-between;
@@ -580,7 +623,7 @@ main {
   flex-direction: row;
   background-color: transparent;
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons {
+.container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container .fight-buttons {
   height: 7vh;
   width: 13vw;
   text-decoration: none;
@@ -594,20 +637,20 @@ main {
   flex-direction: row;
   font-size: 0.8rem;
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons:hover {
+.container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container .fight-buttons:hover {
   background-color: #282828;
 }
-.container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons:hover {
+.container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container .fight-buttons:hover {
   cursor: pointer;
 }
-.container-figth-home .winner-container {
+.container-fight-home .winner-container {
   height: 100%;
-  background-image: url("../../../public/background-battle.jpg");
+  background-image: url("/background-battle.jpg");
   background-position: center;
   border-radius: 1rem;
   background-size: cover;
 }
-.container-figth-home .winner-container .winner-filter {
+.container-fight-home .winner-container .winner-filter {
   background-color: rgba(52, 52, 52, 0.5);
   height: 100%;
   width: 100%;
@@ -617,7 +660,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.container-figth-home .winner-container .winner-filter .winner-title {
+.container-fight-home .winner-container .winner-filter .winner-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -625,12 +668,12 @@ main {
   height: 15%;
   background-color: transparent;
 }
-.container-figth-home .winner-container .winner-filter .winner-img {
+.container-fight-home .winner-container .winner-filter .winner-img {
   background-color: transparent;
   height: 50%;
   margin-bottom: 3vh;
 }
-.container-figth-home .winner-container .winner-filter .winner-button-back {
+.container-fight-home .winner-container .winner-filter .winner-button-back {
   background-color: transparent;
   height: 7vh;
   width: 35vw;
@@ -644,91 +687,91 @@ main {
   align-items: center;
   flex-direction: row;
 }
-.container-figth-home .winner-container .winner-filter .winner-button-back:hover {
+.container-fight-home .winner-container .winner-filter .winner-button-back:hover {
   background-color: #282828;
 }
 
 @media (max-width: 768px) {
-  main .container-figth-home {
+  main .container-fight-home {
     height: 100vh;
     width: 100vw;
   }
-  main .container-figth-home .figth-container .figth-team-title {
+  main .container-fight-home .fight-container .fight-team-title {
     width: 80%;
     line-height: 2rem;
     text-align: center;
   }
-  main .container-figth-home .figth-container .figth-team-container {
+  main .container-fight-home .fight-container .fight-team-container {
     flex-direction: column;
     justify-content: space-evenly;
   }
-  main .container-figth-home .figth-container .figth-team-container .figth-team-pokes {
+  main .container-fight-home .fight-container .fight-team-container .fight-team-pokes {
     flex-direction: row;
     margin: 0;
     width: 80%;
     height: 30%;
   }
-  main .container-figth-home .figth-container .figth-team-container .figth-team-pokes .figth-team-img {
+  main .container-fight-home .fight-container .fight-team-container .fight-team-pokes .figth-team-img {
     width: 130px;
     max-width: 350px;
   }
-  main .container-figth-home .figth-container .figth-team-button-container {
+  main .container-fight-home .fight-container .fight-team-button-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
   }
-  main .container-figth-home .figth-container .figth-team-button-container .figth-team-button {
+  main .container-fight-home .fight-container .fight-team-button-container .fight-team-button {
     width: 70%;
   }
-  main .container-figth-home .container-figth-screen .container-cards {
+  main .container-fight-home .container-fight-screen .container-cards {
     height: 60%;
   }
-  main .container-figth-home .container-figth-screen .container-cards .figth-card, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected {
+  main .container-fight-home .container-fight-screen .container-cards .fight-card, main .container-fight-home .container-fight-screen .container-cards .fight-card-selected {
     margin: 0 5vw;
     height: 35%;
   }
-  main .container-figth-home .container-figth-screen .container-cards .figth-card .figth-card-img, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .figth-card-img {
+  main .container-fight-home .container-fight-screen .container-cards .fight-card .fight-card-img, main .container-fight-home .container-fight-screen .container-cards .fight-card-selected .fight-card-img {
     height: 170px;
   }
-  main .container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card {
+  main .container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card, main .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card {
     width: 50%;
   }
-  main .container-figth-home .container-figth-screen .container-cards .figth-card .container-figth-card .figth-card-hp, main .container-figth-home .container-figth-screen .container-cards .figth-card-selected .container-figth-card .figth-card-hp {
+  main .container-fight-home .container-fight-screen .container-cards .fight-card .container-fight-card .fight-card-hp, main .container-fight-home .container-fight-screen .container-cards .fight-card-selected .container-fight-card .fight-card-hp {
     font-size: 0.7rem;
   }
-  main .container-figth-home .container-figth-screen .container-figth-control {
+  main .container-fight-home .container-fight-screen .container-fight-control {
     flex-direction: column;
     height: 40%;
     justify-content: space-evenly;
   }
-  main .container-figth-home .container-figth-screen .container-figth-control .figth-comments {
+  main .container-fight-home .container-fight-screen .container-fight-control .fight-comments {
     width: 100%;
     height: 50%;
     line-height: 1rem;
   }
-  main .container-figth-home .container-figth-screen .container-figth-control .figth-comments p {
+  main .container-fight-home .container-fight-screen .container-fight-control .fight-comments p {
     font-size: 0.9rem;
   }
-  main .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container {
+  main .container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container {
     width: 100%;
   }
-  main .container-figth-home .container-figth-screen .container-figth-control .figth-buttons-container .figth-buttons {
+  main .container-fight-home .container-fight-screen .container-fight-control .fight-buttons-container .fight-buttons {
     width: 45%;
   }
-  main .container-figth-home .container-figth-screen .winner-container {
+  main .container-fight-home .container-fight-screen .winner-container {
     justify-content: space-around;
   }
-  main .container-figth-home .container-figth-screen .winner-container .winner-title {
+  main .container-fight-home .container-fight-screen .winner-container .winner-title {
     text-align: center;
     line-height: 2rem;
     font-size: 1.3rem;
   }
-  main .container-figth-home .container-figth-screen .winner-container .winner-img {
+  main .container-fight-home .container-fight-screen .winner-container .winner-img {
     height: 40%;
     margin-bottom: 7vh;
   }
-  main .container-figth-home .container-figth-screen .winner-container .winner-button-back {
+  main .container-fight-home .container-fight-screen .winner-container .winner-button-back {
     width: 80vw;
     text-align: center;
   }

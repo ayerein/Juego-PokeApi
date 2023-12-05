@@ -33,7 +33,7 @@
             @include center($fd:column);
             .card-poke-stats{
                 line-height: 2rem;
-                width: 80%;
+                width: 85%;
             }
         }
     }
@@ -41,7 +41,7 @@
         width: 100%;
         @include center($jc:space-around);
         .card-poke-button-volver, .card-drop-poke{
-            @include button($height:7vh, $width:25vw);
+            @include button($height:7vh, $width:30vw);
             @include center;
         }
     }

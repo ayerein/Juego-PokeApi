@@ -3,6 +3,11 @@
 .container-pokeball{
   @include container;
   @include center($fd:column, $jc:space-evenly);
+  .title-pokeball{
+    text-align: center;
+    width: 90%;
+    line-height: 2rem;
+  }
   .pokeball{
     height: 300px;
     width: 300px;

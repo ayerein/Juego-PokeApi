@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom"
+import { FirstPoke } from "../components/FirstPoke"
+import { Loading } from "../components/Loading"
+import { useGetPoke } from "../hooks/useGetPoke"
+import { ContainerHome } from "./ContainerHome"
 
-export const TeamHome = ({ team }) => {
+export const TeamHome = () => {
+    const { team } = useGetPoke()
+
+    const RenderLoading = () => {
+        if(team === 'loading') return <Loading />
+        if(team && team.length > 0) return <ContainerHome team={team}/>
+        if(team) return <FirstPoke />
+    }
     return(
-        <section className="home-container-team">
-            {
-                team.map(poke => (
-                    <Link to={`/detail/${poke.id}`} key={poke.id} className="home-team-poke">
-                            <img src={poke.img} alt={poke.name} className="home-team-img" />
-                            <p className="home-team-name">{poke.name}</p>
-                    </Link>
-                ))
-            }
-        </section>
+        <RenderLoading />
     )
 }
